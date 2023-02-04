@@ -1,9 +1,13 @@
 fn main() {
-    let a_number = 10;
-    let a_word = "Ten";
+    let number : u32 = 14;
+    println!("The number is {}.", number);
 
-    let a_number = a_number + 11;
+    let is_bigger = 1 >4;
+    println!("Is 1 > 4? {}", is_bigger);
 
-    println!("The number is {}.", a_number);
-    println!("The word is {}.", a_word);
+    let uppercase_s = 'S';
+    let lowercase_f = 'f';
+    let smiley_face = '😃';
+
+    println!("{} is a {}", smiley_face, uppercase_s);
 }

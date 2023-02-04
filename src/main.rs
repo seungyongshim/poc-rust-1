@@ -1,22 +1,33 @@
 fn main() {
-    let tuple = ('E', 5i32, true);
+    let we_load = WebEvent::WELoad(true);
 
-    println!("{}", tuple.0);
+    let click = MouseClick {x : 100, y: 250};
 
-    let user_1 = Student
-    {
-        name: String::from("Shim"),
-        level: 2,
-        remote: true
-    };
+    let we_click = WebEvent::WEClick(click);
 
-    println!("{}", user_1.name);
+    let keys = KeyPress(String::from("Ctrl+"), 'N');
+
+    let we_key = WebEvent::WEKeys(keys);
+
+    println!("{:#?}", we_click);
 }
-
 
 struct Student
 {
     name : String,
     level: u8,
     remote: bool
+}
+
+#[derive(Debug)]
+struct KeyPress(String, char);
+
+#[derive(Debug)]
+struct MouseClick{ x: i64, y: i64}
+
+#[derive(Debug)]
+enum WebEvent {
+    WELoad(bool),
+    WEKeys(KeyPress),
+    WEClick(MouseClick)
 }
